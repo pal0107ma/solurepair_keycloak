@@ -1,0 +1,9 @@
+node_modules
+Dockerfile
+dist
+dist_keycloak
+*.Dockerfile
+docker-compose.yaml
+*.docker-compose.yaml
+.gitignore
+.dockerignore
