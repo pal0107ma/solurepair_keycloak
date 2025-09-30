@@ -11,7 +11,7 @@ type ConnectSocialButtonProps = {
 
 function ConnectSocialButton({
   startIcon: StartIcon,
-  children,
+  children
 }: ConnectSocialButtonProps) {
   return (
     <StyledButton
@@ -27,17 +27,17 @@ function ConnectSocialButton({
           backgroundColor: "#D8DBE0",
           borderColor: "#D8DBE0",
           boxShadow: "none",
-          color: "white",
+          color: "white"
         },
         "&:active": {
           backgroundColor: "#D8DBE0",
           borderColor: "#D8DBE0",
           boxShadow: "none",
-          color: "white",
+          color: "white"
         },
         "&:focus": {
-          boxShadow: "none",
-        },
+          boxShadow: "none"
+        }
       }}
     >
       {children}

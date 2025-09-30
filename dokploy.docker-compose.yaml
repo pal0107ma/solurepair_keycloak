@@ -1,7 +1,7 @@
 services:
   keycloak:
     image: solurepair-keycloak
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     environment:

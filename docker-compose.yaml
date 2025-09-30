@@ -1,17 +1,17 @@
 services:
   keycloakify:
     image: keycloakify
-    build: 
+    build:
       context: .
       dockerfile: keycloakify.Dockerfile
-    ports: 
+    ports:
       - 6006:6006
-    volumes: 
+    volumes:
       - ./:/app
 
   keycloak:
     image: solurepair-keycloak
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     environment:
