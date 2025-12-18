@@ -7,7 +7,7 @@ const StyledButton = styled(Button)<ButtonProps>(() => ({
   fontSize: 16,
   padding: "14px 12px",
   lineHeight: 1.5,
-  borderRadius: "8px",
+  borderRadius: "2em",
   "&:hover": {
     boxShadow: "none",
     color: "white"

@@ -5,6 +5,7 @@ import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import GoogleSvgIcon from "../components/GoogleSvgIcon.tsx";
+import MicrosoftSvgIcon from "../components/MicrosoftSvgIcon.tsx";
 import StyledTextField from "../components/StyledTextField.tsx";
 import StyledButton from "../components/StyledButton.tsx";
 import ConnectSocialButton from "../components/ConnectSocialButton.tsx";
@@ -22,6 +23,17 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
   const { msg, msgStr } = i18n;
 
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
+
+  const getSvgIcon = (providerId: string) => {
+    switch (providerId) {
+      case "google":
+        return GoogleSvgIcon;
+      case "microsoft":
+        return MicrosoftSvgIcon;
+      default:
+        return GoogleSvgIcon;
+    }
+  };
 
   return (
     <Template
@@ -57,7 +69,9 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                       type="button"
                       href={p.loginUrl}
                     >
-                      <ConnectSocialButton startIcon={GoogleSvgIcon}>{p.displayName}</ConnectSocialButton>
+                      <ConnectSocialButton startIcon={
+                        getSvgIcon(p.providerId)
+                      }>{p.displayName}</ConnectSocialButton>
                     </a>
                   </li>
                 ))}
@@ -68,6 +82,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
       }
     >
       <div id="kc-form">
+        <h1 className="custom-title">{msg("loginTitleHtml", 'Hello!')}</h1>
         <div id="kc-form-wrapper">
           {realm.password && (
             <form

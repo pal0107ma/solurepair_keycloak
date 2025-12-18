@@ -1,0 +1,25 @@
+import SvgIcon from "@mui/material/SvgIcon";
+
+const MicrosoftSvgIcon = () => {
+  return (
+    <SvgIcon>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width={100}
+        height={100}
+        viewBox="0 0 48 48"
+      >
+            <title>Azure</title>
+            <path d="M11.49 2H2v9.492h9.492V2h-.002z" fill="#F25022"></path>
+            <path d="M22 2h-9.492v9.492H22V2z" fill="#7FBA00"></path>
+            <path d="M11.49 12.508H2V22h9.492v-9.492h-.002z" fill="#00A4EF"></path>
+            <path d="M22 12.508h-9.492V22H22v-9.492z" fill="#FFB900"></path>
+        </svg>
+    </SvgIcon>
+  );
+};
+
+export default MicrosoftSvgIcon;
+

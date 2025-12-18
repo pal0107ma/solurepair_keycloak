@@ -6,7 +6,8 @@ WORKDIR /app
 
 COPY package.json ./
 
-RUN yarn install
+# Cambio yarn por npm
+RUN npm install
 
 COPY . .
 
