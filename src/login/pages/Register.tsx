@@ -106,6 +106,7 @@ export default function Register(props: RegisterProps) {
       displayRequiredFields
     >
       <form id="kc-register-form" className={kcClsx("kcFormClass")} action={url.registrationAction} method="post" onSubmit={formik.handleSubmit}>
+        <h1 className="custom-title">{msg("loginTitleHtml", 'Register')}</h1>
         {!realm.registrationEmailAsUsername && (
           <StyledTextField
             variant="filled"

@@ -5,12 +5,12 @@ export const styles = {
   backgroundColor: "white",
   borderRadius: "8px",
   "& .MuiInputLabel-root": {
-    color: "#C0C3CC" // color por defecto
+    color: "#B2B6BF", // color por defecto
   },
   "& .MuiFilledInput-root": {
     backgroundColor: "white",
-    borderRadius: "8px",
-
+    borderRadius: "2em",
+    border: "1px solid #A8C2C8", 
     "&:hover": { backgroundColor: "white" },
     "&.Mui-focused": { backgroundColor: "white" },
 

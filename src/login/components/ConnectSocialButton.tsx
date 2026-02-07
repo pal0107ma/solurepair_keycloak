@@ -21,19 +21,20 @@ function ConnectSocialButton({
       fullWidth
       sx={{
         backgroundColor: "#fff",
-        borderColor: "#fff",
+        border: "1px solid #B7B7B7",
         color: "#C0C3CC",
+        marginBottom: "8px",
         "&:hover": {
           backgroundColor: "#D8DBE0",
           borderColor: "#D8DBE0",
           boxShadow: "none",
-          color: "white"
+          color: "black"
         },
         "&:active": {
           backgroundColor: "#D8DBE0",
           borderColor: "#D8DBE0",
           boxShadow: "none",
-          color: "white"
+          color: "black"
         },
         "&:focus": {
           boxShadow: "none"

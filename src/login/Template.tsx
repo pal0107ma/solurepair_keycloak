@@ -61,6 +61,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         </div>
       </div>
       <div className={kcClsx("kcFormCardClass")}>
+        
         {/* <header className={kcClsx("kcFormHeaderClass")}>
                     {enabledLanguages.length > 1 && (
                         <div className={kcClsx("kcLocaleMainClass")} id="kc-locale">
