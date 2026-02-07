@@ -66,7 +66,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
               <LoginVerifyEmail
                 {...{ kcContext, i18n, classes }}
                 Template={Template}
-                doUseDefaultCss={true}
+                doUseDefaultCss={false}
               />
             );
           default:

@@ -8,8 +8,11 @@ services:
       - 6006:6006
     volumes:
       - ./:/app
-      - /app/node_modules # Evita conflictos con los módulos de node
-
+      - keycloakify_volume:/app/node_modules # Evita conflictos con los módulos de node
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=100
+      - WATCHPACK_POLLING=true
   keycloak:
     image: solurepair-keycloak
     build:
@@ -31,7 +34,7 @@ services:
     command: start-dev
 
   postgres:
-    image: postgres:14.19-alpine3.21 # Usar una versión específica y ligera de PostgreSQL
+    image: postgres:17-alpine # Mismo en prod
     environment:
       - POSTGRES_DB=keycloakdb
       - POSTGRES_USER=keycloak
@@ -42,3 +45,4 @@ services:
 
 volumes:
   postgres_data:
+  keycloakify_volume:
