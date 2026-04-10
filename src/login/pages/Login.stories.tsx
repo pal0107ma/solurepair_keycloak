@@ -371,12 +371,12 @@ export const CustomStory: Story = {
               loginUrl: "google",
               alias: "google",
               providerId: "google",
-              displayName: "Connect with Google",
+              displayName: "Signin with Google",
               iconClasses: "fa fa-google"
             }
           ]
         },
-        realm: { rememberMe: false, registrationAllowed: false }
+        realm: { rememberMe: false, registrationAllowed: true, registrationEmailAsUsername: true }
       }}
     />
   )

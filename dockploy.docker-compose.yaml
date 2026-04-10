@@ -1,5 +1,5 @@
 services:
-  keycloak:
+  solurepair_keycloak:
     image: solurepair-keycloak
     build:
       context: .
@@ -12,9 +12,9 @@ services:
       - KC_FEATURES=token-exchange:v1,admin-fine-grained-authz:v1
       # DATABASE CONFIG
       - KC_DB=postgres
-      - KC_DB_USERNAME=${POSTGRES_USER}
-      - KC_DB_PASSWORD=${POSTGRES_PASSWORD}
-      - KC_DB_URL=jdbc:postgresql://postgres/${POSTGRES_DB}
+      - KC_DB_USERNAME=
+      - KC_DB_PASSWORD=
+      - KC_DB_URL=
       # HOSTANAME CONFIG
       - KC_HOSTNAME=${KC_HOSTNAME}
       - KC_PROXY=edge
@@ -23,20 +23,9 @@ services:
       - KC_HTTP_ENABLED=true
     command: ["start", "--optimized"]
     restart: unless-stopped
-    ports:
-      - 8080:8080
-    depends_on:
-      - postgres
+    networks:
+      - dokploy-network
 
-  postgres:
-    image: postgres:17-alpine
-    environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    restart: unless-stopped
-
-volumes:
-  postgres_data:
+networks:
+  dokploy-network:
+    external: true
