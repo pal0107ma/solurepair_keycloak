@@ -11,10 +11,10 @@ services:
       # FEATURES CONFIG
       - KC_FEATURES=token-exchange:v1,admin-fine-grained-authz:v1
       # DATABASE CONFIG
-      - KC_DB=postgres
-      - KC_DB_USERNAME=
-      - KC_DB_PASSWORD=
-      - KC_DB_URL=
+      - KC_DB=${KC_DB}
+      - KC_DB_USERNAME=${KC_DB_USERNAME}
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
+      - KC_DB_URL=${KC_DB_URL}
       # HOSTANAME CONFIG
       - KC_HOSTNAME=${KC_HOSTNAME}
       - KC_PROXY=edge
