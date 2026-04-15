@@ -82,7 +82,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
       }
     >
       <div id="kc-form">
-        <h1 className="custom-title">{msg("loginTitleHtml", 'Hello!')}</h1>
+        <h1 className="custom-title">Hello!</h1>
         <div id="kc-form-wrapper">
           {realm.password && (
             <form
@@ -106,7 +106,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                   helperText={
                     messagesPerField.existsError("username", "password") ? kcSanitize(messagesPerField.getFirstError("username", "password")) : null
                   }
-                  variant="filled"
+                  variant="outlined"
                 />
               )}
 

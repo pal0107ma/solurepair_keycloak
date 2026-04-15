@@ -78,8 +78,25 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
             id="logout-sessions"
             name="logout-sessions"
             value="on"
-            control={<Checkbox defaultChecked />}
+            control={
+              <Checkbox 
+                defaultChecked 
+                sx={{ 
+                  color: "#A8C2C8", 
+                  "&.Mui-checked": { color: "#2F7E8D" } 
+                }} 
+              />
+            }
             label={msg("logoutOtherSessions")}
+            sx={{
+              color: "#6B7280",
+              marginLeft: "0.5rem",
+              marginBottom: "1rem",
+              "& .MuiFormControlLabel-label": {
+                fontSize: "0.95rem",
+                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+              }
+            }}
           />
           <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
             <StyledButton type="submit" tabIndex={7} variant="contained" size="large" fullWidth>

@@ -27,7 +27,10 @@ export default function LoginVerifyEmail(props: PageProps<Extract<KcContext, { p
         </p>
       }
     >
-      <p className="instruction">{msg("emailVerifyInstruction1", user?.email ?? "")}</p>
+      <div id="kc-form" style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
+        <h1 className="custom-title">{msg("emailVerifyTitle")}</h1>
+        <p className="instruction">{msg("emailVerifyInstruction1", user?.email ?? "")}</p>
+      </div>
     </Template>
   );
 }

@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import {
   FormControl,
   InputLabel,
-  FilledInput,
+  OutlinedInput,
   InputAdornment,
   IconButton,
   FormHelperText,
-  FilledInputProps
+  OutlinedInputProps
 } from "@mui/material";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import { styles } from "./StyledTextField";
 
-interface PasswordFieldProps extends FilledInputProps {
+interface PasswordFieldProps extends OutlinedInputProps {
   errorText?: string;
   label?: any;
 }
@@ -27,15 +27,16 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <FormControl fullWidth variant="filled" sx={styles} error={error}>
+    <FormControl fullWidth variant="outlined" sx={styles} error={error}>
       <InputLabel htmlFor={id} error={error}>
         {label}
       </InputLabel>
-      <FilledInput
+      <OutlinedInput
         error={error}
         type={showPassword ? "text" : "password"}
         name={id}
         id={id}
+        label={label}
         {...props}
         endAdornment={
           <InputAdornment position="end">
@@ -44,6 +45,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
               aria-label={showPassword ? "hide the password" : "display the password"}
               onClick={() => setShowPassword(!showPassword)}
               edge="end"
+              sx={{ marginRight: "4px" }}
             >
               {showPassword ? (
                 <VisibilityOffOutlinedIcon sx={{ color: "#C0C3CC" }} />

@@ -7,7 +7,7 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
-import logoUrl from "./assets/logo.png";
+import logoUrl from "./assets/logo.svg";
 import Alert from "@mui/material/Alert";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
@@ -57,7 +57,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
           {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
 
-          <img src={logoUrl} width={250} />
+          <img src={logoUrl} width={130} />
         </div>
       </div>
       <div className={kcClsx("kcFormCardClass")}>
@@ -133,7 +133,16 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
           <div id="kc-content-wrapper" className="flex flex-col gap-10">
             {/* App-initiated actions should not see warning messages about the need to complete the action during login. */}
             {displayMessage && message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
-              <Alert severity={message.type}>{kcSanitize(message.summary)}</Alert>
+              <Alert 
+                severity={message.type} 
+                sx={{ 
+                  borderRadius: "1rem", 
+                  mb: 2,
+                  fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" 
+                }}
+              >
+                {kcSanitize(message.summary)}
+              </Alert>
             )}
             {children}
             {auth !== undefined && auth.showTryAnotherWayLink && (

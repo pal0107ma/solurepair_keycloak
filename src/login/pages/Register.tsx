@@ -106,10 +106,9 @@ export default function Register(props: RegisterProps) {
       displayRequiredFields
     >
       <form id="kc-register-form" className={kcClsx("kcFormClass")} action={url.registrationAction} method="post" onSubmit={formik.handleSubmit}>
-        <h1 className="custom-title">{msg("loginTitleHtml", 'Register')}</h1>
+        <h1 className="custom-title">{msg("loginTitleHtml", "Register")}</h1>
         {!realm.registrationEmailAsUsername && (
           <StyledTextField
-            variant="filled"
             label={msg("username")}
             name="username"
             id="username"
@@ -122,7 +121,6 @@ export default function Register(props: RegisterProps) {
           />
         )}
         <StyledTextField
-          variant="filled"
           label={msg("email")}
           name="email"
           id="email"
@@ -135,7 +133,6 @@ export default function Register(props: RegisterProps) {
         />
 
         <StyledTextField
-          variant="filled"
           label={msg("firstName")}
           name="firstName"
           id="firstName"
@@ -148,7 +145,6 @@ export default function Register(props: RegisterProps) {
         />
 
         <StyledTextField
-          variant="filled"
           label={msg("lastName")}
           name="lastName"
           id="lastName"
@@ -197,7 +193,7 @@ export default function Register(props: RegisterProps) {
           </div>
         )}
         <div className={kcClsx("kcFormGroupClass")}>
-          <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")}>
+          <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")} style={{ marginBottom: "1.5rem" }}>
             <div className={kcClsx("kcFormOptionsWrapperClass")}>
               <span>
                 <a href={url.loginUrl}>{msg("backToLogin")}</a>

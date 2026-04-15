@@ -40,14 +40,13 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
             autoFocus
             defaultValue={auth.attemptedUsername ?? ""}
             error={messagesPerField.existsError("username")}
-            variant="filled"
             helperText={kcSanitize(messagesPerField.get("username"))}
           />
         </div>
         <div className={kcClsx("kcFormGroupClass", "kcFormSettingClass")}>
-          <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")}>
+          <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")} style={{ marginBottom: "1.5rem" }}>
             <div className={kcClsx("kcFormOptionsWrapperClass")}>
-              <span className="mb-6">
+              <span>
                 <a href={url.loginUrl}>{msg("backToLogin")}</a>
               </span>
             </div>

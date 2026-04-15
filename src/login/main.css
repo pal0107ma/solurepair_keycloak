@@ -1,59 +1,118 @@
 @import "tailwindcss";
 
-.kcHeaderClass {
-  @apply flex justify-center;
-}
-.kcFormCardClass {
-  @apply mx-auto md:w-5/12 lg:w-1/4;
-}
-
-.kcFormOptionsWrapperClass {
-  @apply flex justify-end text-blue-600;
-}
-.kcLoginClass {
-  @apply flex flex-col gap-5 pt-10 px-5;
-}
-
-form {
-  @apply flex flex-col gap-4;
-}
-
 html,
-body {
-  height: 100%;
-  min-height: 100%;
+body,
+#root {
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
+}
+
+body {
   background: #0D323A;
   background: url('./assets/pattern.svg'),
               linear-gradient(0deg,rgba(13, 50, 58, 1) 0%, rgba(34, 96, 109, 1) 50%, rgba(53, 139, 158, 1) 100%);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
 }
 
-.kcFormCardClass{
-  width: 80%;
+.kcLoginClass {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 10vh;
+}
+
+.kcHeaderClass {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-shrink: 0;
+}
+
+.kcFormCardClass {
+  width: 100%;
   background: white;
-  padding: 5em 2em 5em 2em;
-  border-radius: 2em 2em 0 0;
+  padding: 3.5rem 2rem;
+  border-radius: 2.5rem 2.5rem 0 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .custom-title {
-  @apply text-3xl font-bold text-center mb-6;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
   color: #2F7E8D;
 }
 
-.kcFormOptionsClass{
-  margin: 2em;
+form, #kc-social-providers {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-#kc-registration-container{
+.instruction {
   text-align: center;
+  color: #6B7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
-#kc-registration-container a{
-  color: #2F7E8D !important;
-  font-weight: bold;
+.instruction a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a.kcFormSocialAccountListButtonClass {
+  text-decoration: none;
+}
+
+.kcFormOptionsWrapperClass {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.kcFormOptionsWrapperClass a {
+  color: #007BFF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#kc-registration-container {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  color: #9CA3AF;
+}
+
+#kc-registration-container a {
+  color: #007BFF !important;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
